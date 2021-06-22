@@ -67,4 +67,12 @@ public class Tests {
 
 		assertEquals("Book not found in Bookstore!", bookNotFoundException.getMessage());
 	}
+	
+	@Test
+	public void exceptions() {
+		BookNotFoundException bookNotFoundException = assertThrows(BookNotFoundException.class, 
+				() -> bookService.getByTitle("Head First Spring"));
+
+		assertEquals("Book not found in Bookstore!", bookNotFoundException.getMessage());
+	}
 }
